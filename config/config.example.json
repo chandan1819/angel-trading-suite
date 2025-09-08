@@ -1,0 +1,6 @@
+{
+    "api_key": "your_api_key_here",
+    "client_code": "your_client_code_here",
+    "pin": "your_pin_here",
+    "totp_secret": "your_totp_secret_here"
+}

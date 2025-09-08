@@ -1,0 +1,136 @@
+Subject: API Key Authentication Issue - Error AB1053 - Client Code C206498 - Urgent Support Required
+
+Dear Angel Broking SmartAPI Support Team,
+
+I am writing to request urgent assistance with API key authentication issues for my trading account. Despite multiple attempts and following all documentation, I am unable to authenticate with any generated API keys.
+
+ACCOUNT DETAILS:
+================
+• Client Code: C206498
+• Account Type: Trading Account
+• Issue: API Key Authentication Failure
+• Error Code: AB1053 - "Invalid apiKey"
+• Date of Issue: September 8, 2025
+
+PROBLEM DESCRIPTION:
+===================
+I am consistently receiving "Invalid apiKey" error (AB1053) when attempting to authenticate using the SmartAPI Python SDK. This occurs with all API keys I have generated from the developer portal.
+
+API KEYS ATTEMPTED:
+==================
+I have tried multiple API keys, all showing the same error:
+
+1. Initial API Key: 846ff12f-9a0a-475f-a6c7-b0bb6ec5a625
+   Status: Invalid apiKey (AB1053)
+
+2. Second API Key: 33bbbeaa-76d7-438f-8ae5-2833c7178379
+   Status: Invalid apiKey (AB1053)
+
+3. Latest API Key: edd9e08b-e420-4875-bbbf-0f9a95e1e17e
+   App Name: niftyTradingWGEO1K99
+   Status: Invalid apiKey (AB1053)
+   Generated: Today (September 8, 2025)
+
+TECHNICAL DETAILS:
+=================
+• SDK: SmartAPI Python SDK (Latest version)
+• Environment: Production (https://apiconnect.angelone.in)
+• Platform: macOS with Python 3.9.6
+• Network: Stable internet connection verified
+• API Endpoint Tested: https://apiconnect.angelone.in/rest/auth/angelbroking/user/v1/loginByPassword
+
+AUTHENTICATION ATTEMPT DETAILS:
+==============================
+Request Headers:
+- Content-type: application/json
+- X-ClientLocalIP: 127.0.0.1
+- X-ClientPublicIP: 106.193.147.98
+- X-MACAddress: 0e:b8:7c:c6:7e:55
+- Accept: application/json
+- X-PrivateKey: [API Key]
+- X-UserType: USER
+- X-SourceID: WEB
+
+Request Payload:
+- clientcode: C206498
+- password: [PIN]
+- totp: [Generated TOTP using registered secret]
+
+Server Response:
+{
+  "message": "Invalid apiKey",
+  "errorcode": "AB1053",
+  "status": false,
+  "data": null
+}
+
+VERIFICATION COMPLETED:
+======================
+✓ API key format validation (36 characters, proper UUID format)
+✓ TOTP generation working correctly using registered secret
+✓ Network connectivity to Angel Broking servers confirmed
+✓ Client code and PIN format verified
+✓ Multiple API endpoints tested
+✓ Waited for API key activation (tested over multiple hours)
+✓ All required Python packages installed correctly
+
+ACCOUNT STATUS VERIFICATION NEEDED:
+==================================
+Please verify the following for my account (C206498):
+
+1. Is API trading enabled for my account?
+2. Are there any pending KYC or documentation requirements?
+3. Is my account approved for API access?
+4. Are there any restrictions or holds on my account?
+5. Do I need to complete any additional agreements or forms?
+6. Is there a specific activation process for API keys?
+
+DEVELOPER PORTAL STATUS:
+=======================
+• Successfully logged into https://smartapi.angelone.in/
+• Can generate API keys (shows as created)
+• 2FA/TOTP is properly configured
+• All generated API keys appear in the portal
+
+TROUBLESHOOTING COMPLETED:
+=========================
+• Tested multiple API keys
+• Verified API key formats
+• Tested different network connections
+• Waited for potential activation delays
+• Followed all documentation guidelines
+• Tested with fresh API key generation
+• Verified system time synchronization for TOTP
+
+REQUEST FOR ASSISTANCE:
+======================
+I urgently need assistance to resolve this issue as I am unable to proceed with API integration for my trading application. Please:
+
+1. Verify my account (C206498) has proper API access permissions
+2. Check if there are any pending requirements or approvals
+3. Confirm if the generated API keys should be working
+4. Provide any additional steps needed to activate API access
+5. If needed, manually activate API access for my account
+
+CONTACT INFORMATION:
+===================
+• Client Code: C206498
+• Email: [Your email address]
+• Phone: [Your phone number if needed]
+• Preferred Response: Email
+
+I would greatly appreciate a prompt response as this is blocking my development work. Please let me know if you need any additional information or logs.
+
+Thank you for your assistance.
+
+Best regards,
+[Your Name]
+Angel Broking Client - C206498
+
+---
+Technical Environment Details:
+- OS: macOS
+- Python: 3.9.6
+- SmartAPI SDK: Latest version
+- Request Timestamp: September 8, 2025
+- Error Persistence: Multiple days, multiple API keys
