@@ -196,7 +196,7 @@ def main():
     print("\n💡 Final Recommendations:")
     print("=" * 30)
     print("1. 📞 Contact Angel Broking Support:")
-    print("   - Email: smartapi.sdk@gmail.com")
+    print("   - Email: chdansinha1@hotmail.com")
     print("   - Phone: Check your Angel Broking app for support number")
     print("   - Mention Error Code: AB1053 (Invalid apiKey)")
     

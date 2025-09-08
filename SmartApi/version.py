@@ -5,7 +5,7 @@ __download_url__ = "https://github.com/angel-one/smartapi-python"
 __version__ = "1.5.3"
 __author__ = "ab-smartapi"
 __token__ = "ab-smartapi"
-__author_email__ = "smartapi.sdk@gmail.com"
+__author_email__ = "chdansinha1@hotmail.com"
 
 
 # PyPI configuration removed for security

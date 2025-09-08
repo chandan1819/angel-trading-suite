@@ -137,7 +137,7 @@ python3 trading/order_management.py
 ## 📞 Support
 
 ### Angel Broking Support
-- **Email**: smartapi.sdk@gmail.com
+- **Email**: chdansinha1@hotmail.com
 - **Portal**: https://smartapi.angelone.in/
 
 ### Common Issues

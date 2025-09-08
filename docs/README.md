@@ -100,7 +100,7 @@ python3 main.py
 ## 📞 Support
 
 ### Angel Broking Support
-- **Email**: smartapi.sdk@gmail.com
+- **Email**: chdansinha1@hotmail.com
 - **Portal**: https://smartapi.angelone.in/
 - **Documentation**: Available in support/ folder
 

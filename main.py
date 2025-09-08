@@ -203,7 +203,7 @@ class TradingSuite:
         """Show Angel Broking contact information"""
         print("\n📞 ANGEL BROKING CONTACT INFO")
         print("=" * 35)
-        print("📧 Email: smartapi.sdk@gmail.com")
+        print("📧 Email: chdansinha1@hotmail.com")
         print("🌐 Developer Portal: https://smartapi.angelone.in/")
         print("📱 Trading App: Angel One")
         print("🏢 Website: https://www.angelone.in/")

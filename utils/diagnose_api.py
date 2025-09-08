@@ -134,7 +134,7 @@ def provide_solutions(config):
     print("   - Try from a different network")
     
     print(f"\n📞 Angel Broking Support:")
-    print("   - Email: smartapi.sdk@gmail.com")
+    print("   - Email: chdansinha1@hotmail.com")
     print("   - Developer Portal: https://smartapi.angelone.in/")
 
 def main():

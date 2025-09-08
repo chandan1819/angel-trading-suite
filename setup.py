@@ -14,7 +14,7 @@ setup(
     name="smartapi-python",
     version="1.5.5",
     author="ab-smartapi",
-    author_email="smartapi.sdk@gmail.com",
+    author_email="chdansinha1@hotmail.com",
     description="Angel Broking openApi integration",
     long_description=readme,
     long_description_content_type="text/markdown",
