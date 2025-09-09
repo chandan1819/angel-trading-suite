@@ -1,0 +1,153 @@
+# Aggressive Multi-Strategy Configuration
+# Suitable for experienced traders with higher risk tolerance
+
+mode: live
+underlying_symbol: BANKNIFTY
+
+# Aggressive risk management
+risk:
+  max_daily_loss: 15000.0
+  max_concurrent_trades: 5
+  profit_target: 3000.0
+  stop_loss: 1500.0
+  position_size_method: percentage
+  risk_per_trade: 0.03  # 3% of capital per trade
+  margin_buffer: 0.2
+  daily_trade_limit: 15
+  max_trades_per_hour: 3
+
+# Optimized API settings for high frequency
+api:
+  credentials:
+    api_key: ${ANGEL_API_KEY}
+    client_code: ${ANGEL_CLIENT_CODE}
+    pin: ${ANGEL_PIN}
+    totp_secret: ${ANGEL_TOTP_SECRET}
+  timeout: 30
+  max_retries: 3
+  retry_delay: 1.0
+  rate_limit_calls: 90
+  rate_limit_period: 60
+  connection_pool_size: 15
+
+# Multiple strategies enabled
+strategy:
+  enabled_strategies: [straddle, directional, volatility]
+  evaluation_interval: 30  # Check every 30 seconds
+  
+  # Aggressive straddle strategy
+  straddle:
+    enabled: true
+    weight: 1.0
+    min_confidence: 0.6  # Lower confidence threshold
+    
+    # Broader IV range
+    min_iv_rank: 0.4
+    max_iv_rank: 0.9
+    iv_percentile_threshold: 0.6
+    
+    # Flexible time management
+    max_dte: 7
+    min_dte: 0
+    exit_time_minutes: 30  # Exit 30 minutes before close
+    
+    # Moderate liquidity requirements
+    min_volume: 200
+    min_open_interest: 1000
+    max_bid_ask_spread: 5.0
+    
+    # Aggressive entry conditions
+    min_underlying_move: 0.008  # 0.8% minimum move
+    volatility_expansion: true
+    
+    # Aggressive profit taking
+    profit_target_multiplier: 1.2  # Higher profit targets
+    stop_loss_multiplier: 1.0
+    time_decay_exit: true
+  
+  # Directional momentum strategy
+  directional:
+    enabled: true
+    weight: 0.8
+    min_confidence: 0.65
+    
+    # Technical indicators
+    ema_period: 15  # Faster EMA for quicker signals
+    atr_period: 10
+    atr_multiplier: 1.8
+    rsi_period: 12
+    
+    # Momentum settings
+    min_momentum: 0.015  # 1.5% momentum threshold
+    momentum_lookback: 3
+    trend_strength_threshold: 0.6
+    
+    # Option selection
+    target_delta: 0.35
+    max_delta: 0.6
+    min_theta: -8.0
+    
+    # Entry conditions
+    breakout_confirmation: true
+    volume_confirmation: true
+  
+  # Volatility strategy
+  volatility:
+    enabled: true
+    weight: 0.6
+    min_confidence: 0.6
+    
+    # Volatility thresholds
+    iv_percentile_threshold: 0.7
+    iv_rank_threshold: 0.6
+    min_iv_rank: 0.3
+    volatility_lookback: 20
+    
+    # Regime detection
+    regime_detection: true
+    high_vol_threshold: 0.35
+    low_vol_threshold: 0.18
+    
+    # Trading rules
+    buy_low_iv: true
+    sell_high_iv: true
+    mean_reversion_period: 15
+    reversion_threshold: 1.8
+
+# Comprehensive logging
+logging:
+  level: INFO
+  enable_console: true
+  enable_file: true
+  enable_json: true
+  log_dir: logs/aggressive
+  performance_logging: true
+  component_levels:
+    strategy: DEBUG
+    risk: INFO
+    orders: INFO
+
+# Multi-channel notifications
+notification:
+  enabled: true
+  types: [webhook, telegram]
+  
+  webhook_url: "${WEBHOOK_URL}"
+  telegram_bot_token: "${TELEGRAM_BOT_TOKEN}"
+  telegram_chat_id: "${TELEGRAM_CHAT_ID}"
+  
+  notify_on_trade_entry: true
+  notify_on_trade_exit: true
+  notify_on_profit_target: true
+  notify_on_stop_loss: true
+  notify_on_daily_limit: true
+  notify_on_error: true
+
+# Backtesting configuration for validation
+backtest:
+  initial_capital: 500000.0
+  commission_per_trade: 40.0
+  slippage: 1.0
+  realistic_fills: true
+  generate_csv: true
+  generate_json: true

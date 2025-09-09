@@ -1,0 +1,68 @@
+{
+  "timestamp": "2025-09-09T16:10:35.636174",
+  "benchmarks": {
+    "cache_performance": {
+      "write_performance": {
+        "avg_time_ms": 0.002595186233520508,
+        "median_time_ms": 0.0021457672119140625,
+        "p95_time_ms": 0.0030994415283203125,
+        "max_time_ms": 0.03814697265625
+      },
+      "read_performance": {
+        "avg_time_ms": 0.0012717247009277344,
+        "median_time_ms": 0.00095367431640625,
+        "p95_time_ms": 0.0021457672119140625,
+        "max_time_ms": 0.0069141387939453125
+      },
+      "hit_rate_percent": 100.0,
+      "cache_stats": {
+        "entries": 1000,
+        "max_size": 1000,
+        "size_bytes": 8890,
+        "hits": 2000,
+        "misses": 0,
+        "hit_rate_percent": 100.0,
+        "evictions": 0,
+        "cleanup_runs": 0
+      }
+    },
+    "concurrent_processing": {
+      "sequential_time_s": 1.081460952758789,
+      "concurrent_time_s": 0.5200903415679932,
+      "speedup_factor": 2.0793713444059527,
+      "tasks_completed": 20,
+      "success_rate": 100.0,
+      "avg_task_time_ms": 55.18851280212402
+    },
+    "data_processing": {
+      "options_chain_processing": {
+        "avg_time_ms": 0.02090930938720703,
+        "median_time_ms": 0.016570091247558594,
+        "p95_time_ms": 0.04506111145019531,
+        "max_time_ms": 0.04506111145019531,
+        "meets_requirement": true
+      },
+      "atm_calculation": {
+        "avg_time_ms": 0.0016736984252929688,
+        "median_time_ms": 0.00095367431640625,
+        "p95_time_ms": 0.0059604644775390625,
+        "max_time_ms": 0.025272369384765625,
+        "meets_requirement": true
+      }
+    },
+    "memory_usage": {
+      "baseline_memory_mb": 31.21875,
+      "cache_memory_mb": 33.265625,
+      "cache_overhead_mb": 2.046875,
+      "processor_memory_mb": 33.265625,
+      "processor_overhead_mb": 0.0,
+      "total_memory_mb": 33.265625
+    }
+  },
+  "summary": {
+    "total_benchmarks": 4,
+    "performance_score": 98.94,
+    "recommendations": []
+  },
+  "violations": []
+}

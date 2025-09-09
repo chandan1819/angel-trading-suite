@@ -1,0 +1,135 @@
+# Backtesting Optimized Configuration
+# Designed for comprehensive historical analysis and strategy development
+
+mode: paper
+underlying_symbol: BANKNIFTY
+
+# Backtesting-focused risk settings
+risk:
+  max_daily_loss: 10000.0
+  max_concurrent_trades: 10  # Allow more positions for backtesting
+  profit_target: 2000.0
+  stop_loss: 1000.0
+  position_size_method: fixed
+  max_position_size: 50
+  margin_buffer: 0.25
+
+# API settings optimized for data retrieval
+api:
+  credentials:
+    api_key: ${ANGEL_API_KEY}
+    client_code: ${ANGEL_CLIENT_CODE}
+    pin: ${ANGEL_PIN}
+    totp_secret: ${ANGEL_TOTP_SECRET}
+  timeout: 60  # Longer timeout for historical data
+  max_retries: 5
+  retry_delay: 2.0
+  rate_limit_calls: 80
+  rate_limit_period: 60
+
+# All strategies enabled for comprehensive testing
+strategy:
+  enabled_strategies: [straddle, directional, iron_condor, greeks, volatility]
+  evaluation_interval: 60
+  
+  # Balanced straddle parameters
+  straddle:
+    enabled: true
+    weight: 1.0
+    min_confidence: 0.6
+    min_iv_rank: 0.5
+    max_iv_rank: 0.9
+    max_dte: 7
+    min_volume: 100
+    max_bid_ask_spread: 5.0
+    exit_time_minutes: 30
+  
+  # Directional strategy with standard parameters
+  directional:
+    enabled: true
+    weight: 0.8
+    min_confidence: 0.65
+    ema_period: 20
+    atr_period: 14
+    atr_multiplier: 2.0
+    min_momentum: 0.02
+    target_delta: 0.3
+  
+  # Iron condor for defined risk testing
+  iron_condor:
+    enabled: true
+    weight: 0.6
+    min_confidence: 0.55
+    wing_distance: 200
+    max_dte: 30
+    min_dte: 7
+    target_delta: 0.15
+    profit_target_percentage: 0.5
+  
+  # Greeks-based strategy
+  greeks:
+    enabled: true
+    weight: 0.7
+    min_confidence: 0.6
+    target_delta: 0.3
+    max_theta: -10.0
+    min_vega: 5.0
+    max_gamma: 0.01
+  
+  # Volatility strategy
+  volatility:
+    enabled: true
+    weight: 0.5
+    min_confidence: 0.6
+    iv_percentile_threshold: 0.75
+    min_iv_rank: 0.25
+    volatility_lookback: 30
+
+# Detailed logging for analysis
+logging:
+  level: DEBUG
+  enable_console: false  # Reduce console noise during backtesting
+  enable_file: true
+  enable_json: true
+  log_dir: logs/backtesting
+  performance_logging: true
+  structured_logging: true
+  component_levels:
+    strategy: DEBUG
+    data: INFO
+    backtest: DEBUG
+
+# Comprehensive backtesting configuration
+backtest:
+  initial_capital: 1000000.0  # 10 lakh for realistic testing
+  commission_per_trade: 30.0
+  slippage: 0.8
+  realistic_fills: true
+  market_impact: 0.001
+  bid_ask_spread_simulation: true
+  
+  # Performance metrics
+  benchmark_symbol: "NIFTY"
+  risk_free_rate: 0.06
+  calculate_sharpe: true
+  calculate_sortino: true
+  calculate_calmar: true
+  
+  # Detailed reporting
+  generate_csv: true
+  generate_json: true
+  generate_equity_curve: true
+  generate_drawdown_chart: true
+  generate_trade_analysis: true
+  detailed_logs: true
+  
+  # Output settings
+  output_dir: backtest_results
+  
+# Minimal notifications for backtesting
+notification:
+  enabled: false
+  types: []
+
+# Extended data caching for backtesting
+data_cache_ttl: 3600  # Cache for 1 hour during backtesting

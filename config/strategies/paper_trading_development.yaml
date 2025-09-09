@@ -1,0 +1,141 @@
+# Paper Trading Development Configuration
+# Ideal for strategy development and testing new features
+
+mode: paper
+underlying_symbol: BANKNIFTY
+
+# Development-friendly risk settings
+risk:
+  max_daily_loss: 20000.0  # Higher limit for testing
+  max_concurrent_trades: 8
+  profit_target: 2000.0
+  stop_loss: 1000.0
+  position_size_method: percentage
+  risk_per_trade: 0.02
+  margin_buffer: 0.25
+  daily_trade_limit: 20
+
+# API settings with debugging support
+api:
+  credentials:
+    api_key: ${ANGEL_API_KEY}
+    client_code: ${ANGEL_CLIENT_CODE}
+    pin: ${ANGEL_PIN}
+    totp_secret: ${ANGEL_TOTP_SECRET}
+  timeout: 45
+  max_retries: 3
+  retry_delay: 1.5
+  rate_limit_calls: 70
+  rate_limit_period: 60
+
+# Flexible strategy configuration for testing
+strategy:
+  enabled_strategies: [straddle, directional]
+  evaluation_interval: 45  # Moderate frequency for development
+  
+  # Straddle with relaxed parameters for more signals
+  straddle:
+    enabled: true
+    weight: 1.0
+    min_confidence: 0.5  # Lower threshold for more testing opportunities
+    
+    # Broader IV range for development
+    min_iv_rank: 0.3
+    max_iv_rank: 0.95
+    iv_percentile_threshold: 0.5
+    
+    # Flexible time settings
+    max_dte: 14  # Allow longer expiries for testing
+    min_dte: 0
+    exit_time_minutes: 45
+    
+    # Relaxed liquidity for more opportunities
+    min_volume: 50
+    min_open_interest: 500
+    max_bid_ask_spread: 8.0
+    
+    # Development-friendly entry conditions
+    min_underlying_move: 0.005
+    volatility_expansion: true
+    
+    # Standard exit rules
+    profit_target_multiplier: 1.0
+    stop_loss_multiplier: 1.0
+    time_decay_exit: true
+  
+  # Directional strategy for momentum testing
+  directional:
+    enabled: true
+    weight: 0.8
+    min_confidence: 0.6
+    
+    # Standard technical indicators
+    ema_period: 20
+    atr_period: 14
+    atr_multiplier: 2.0
+    rsi_period: 14
+    
+    # Moderate momentum requirements
+    min_momentum: 0.018
+    momentum_lookback: 5
+    trend_strength_threshold: 0.55
+    
+    # Option selection parameters
+    target_delta: 0.3
+    max_delta: 0.5
+    min_theta: -6.0
+    
+    # Entry confirmation
+    breakout_confirmation: true
+    volume_confirmation: false  # Relaxed for development
+
+# Comprehensive development logging
+logging:
+  level: DEBUG
+  enable_console: true
+  enable_file: true
+  enable_json: true
+  log_dir: logs/development
+  performance_logging: true
+  structured_logging: true
+  
+  # Component-specific logging levels
+  component_levels:
+    api: INFO
+    strategy: DEBUG
+    risk: DEBUG
+    orders: DEBUG
+    data: INFO
+  
+  # Development-specific settings
+  slow_query_threshold: 2.0
+  audit_logging: true
+
+# Development notifications
+notification:
+  enabled: true
+  types: [webhook]
+  webhook_url: "${DEV_WEBHOOK_URL}"
+  
+  # Notify on all events for development monitoring
+  notify_on_trade_entry: true
+  notify_on_trade_exit: true
+  notify_on_profit_target: true
+  notify_on_stop_loss: true
+  notify_on_daily_limit: true
+  notify_on_error: true
+
+# Development backtesting settings
+backtest:
+  initial_capital: 200000.0
+  commission_per_trade: 25.0
+  slippage: 0.6
+  realistic_fills: true
+  generate_csv: true
+  generate_json: true
+  detailed_logs: true
+
+# Development-specific settings
+data_cache_ttl: 180  # Shorter cache for development
+position_check_interval: 20  # More frequent position checks
+emergency_stop_check_interval: 5  # Frequent emergency checks

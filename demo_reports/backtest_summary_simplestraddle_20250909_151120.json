@@ -1,0 +1,78 @@
+{
+  "backtest_info": {
+    "strategy_name": "SimpleStraddle",
+    "start_date": "2024-01-01",
+    "end_date": "2024-01-10",
+    "duration_days": 9,
+    "generated_at": "2025-09-09T15:11:20.800976"
+  },
+  "capital_summary": {
+    "initial_capital": 100000.0,
+    "final_capital": 48549.7191775315,
+    "total_pnl": -51450.2808224685,
+    "total_return_pct": -51.4502808224685
+  },
+  "performance_metrics": {
+    "total_pnl": -51450.2808224685,
+    "total_return_pct": -51.4502808224685,
+    "max_drawdown": 51450.2808224685,
+    "max_drawdown_pct": 51.4502808224685,
+    "win_rate": 0.0,
+    "avg_trade_return": -6431.285102808562,
+    "avg_winning_trade": 0.0,
+    "avg_losing_trade": -6431.285102808562,
+    "total_trades": 8,
+    "winning_trades": 0,
+    "losing_trades": 8,
+    "sharpe_ratio": -1.3611108259258358,
+    "profit_factor": 0.0,
+    "max_consecutive_wins": 0,
+    "max_consecutive_losses": 8,
+    "avg_trade_duration_hours": 27.0,
+    "largest_win": 0.0,
+    "largest_loss": -17026.271897820272
+  },
+  "trade_summary": {
+    "total_trades": 8,
+    "completed_trades": 8,
+    "open_trades": 0,
+    "cancelled_trades": 0
+  },
+  "risk_metrics": {
+    "max_drawdown": 51450.2808224685,
+    "max_drawdown_pct": 51.4502808224685,
+    "largest_win": 0.0,
+    "largest_loss": -17026.271897820272,
+    "profit_factor": 0.0
+  },
+  "metadata": {
+    "strategy_config": {
+      "name": "SimpleStraddle",
+      "enabled": true,
+      "weight": 1.0,
+      "min_confidence": 0.6,
+      "max_positions": 1,
+      "current_positions": 0,
+      "max_loss_per_trade": 1000.0,
+      "target_profit_per_trade": 2000.0,
+      "min_volume": 100,
+      "max_bid_ask_spread_pct": 5.0,
+      "min_open_interest": 50
+    },
+    "backtest_config": {
+      "initial_capital": 100000.0,
+      "commission_per_trade": 20.0,
+      "slippage_pct": 0.1,
+      "fill_probability": 1.0,
+      "max_trades_per_day": 3,
+      "risk_free_rate": 0.06,
+      "trading_hours": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "early_exit_time": "15:00"
+    },
+    "data_points": 10,
+    "backtest_duration_days": 9
+  }
+}

@@ -1,0 +1,85 @@
+# Conservative Straddle Strategy Configuration
+# Suitable for risk-averse traders with focus on high-probability trades
+
+mode: paper
+underlying_symbol: BANKNIFTY
+
+# Conservative risk management
+risk:
+  max_daily_loss: 2000.0
+  max_concurrent_trades: 1
+  profit_target: 1000.0
+  stop_loss: 500.0
+  position_size_method: fixed
+  max_position_size: 25
+  margin_buffer: 0.3
+  daily_trade_limit: 3
+
+# API settings optimized for stability
+api:
+  credentials:
+    api_key: ${ANGEL_API_KEY}
+    client_code: ${ANGEL_CLIENT_CODE}
+    pin: ${ANGEL_PIN}
+    totp_secret: ${ANGEL_TOTP_SECRET}
+  timeout: 45
+  max_retries: 5
+  retry_delay: 2.0
+  rate_limit_calls: 50
+  rate_limit_period: 60
+
+# Conservative straddle strategy
+strategy:
+  enabled_strategies: [straddle]
+  evaluation_interval: 120  # Check every 2 minutes
+  
+  straddle:
+    enabled: true
+    weight: 1.0
+    min_confidence: 0.8  # High confidence threshold
+    
+    # Strict IV requirements
+    min_iv_rank: 0.7     # Only trade in high IV environment
+    max_iv_rank: 0.95    # Avoid extreme volatility
+    iv_percentile_threshold: 0.8
+    
+    # Conservative time management
+    max_dte: 3           # Only same-day or next-day expiry
+    min_dte: 0
+    exit_time_minutes: 60  # Exit 1 hour before close
+    
+    # High liquidity requirements
+    min_volume: 500
+    min_open_interest: 2000
+    max_bid_ask_spread: 3.0
+    
+    # Entry filters
+    min_underlying_move: 0.005  # 0.5% minimum move
+    volatility_expansion: true
+    
+    # Conservative exit rules
+    profit_target_multiplier: 0.8  # Take profits early
+    stop_loss_multiplier: 1.0
+    time_decay_exit: true
+    max_loss_percentage: 0.5  # Exit at 50% loss
+
+# Enhanced logging for analysis
+logging:
+  level: INFO
+  enable_console: true
+  enable_file: true
+  enable_json: true
+  log_dir: logs/conservative
+  performance_logging: true
+
+# Notification for all events
+notification:
+  enabled: true
+  types: [webhook]
+  webhook_url: "${WEBHOOK_URL}"
+  notify_on_trade_entry: true
+  notify_on_trade_exit: true
+  notify_on_profit_target: true
+  notify_on_stop_loss: true
+  notify_on_daily_limit: true
+  notify_on_error: true

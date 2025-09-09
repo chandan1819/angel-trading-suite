@@ -71,3 +71,18 @@ temp/
 tmp/
 *.tmp
 *.bak
+
+# Kiro AI assistant files
+.kiro/
+
+# Emergency stop files
+emergency_stop.txt
+emergency_stop.*
+
+# Performance test results
+performance_results/
+benchmark_results/
+
+# System validation reports
+validation_reports/
+deployment_reports/
