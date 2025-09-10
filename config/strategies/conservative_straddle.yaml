@@ -11,7 +11,7 @@ risk:
   profit_target: 1000.0
   stop_loss: 500.0
   position_size_method: fixed
-  max_position_size: 25
+  max_position_size: 35  # 1 lot with current lot size 35
   margin_buffer: 0.3
   daily_trade_limit: 3
 

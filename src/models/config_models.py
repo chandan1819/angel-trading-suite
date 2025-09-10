@@ -111,7 +111,7 @@ class RiskConfig:
     stop_loss: float = 1000.0
     position_size_method: str = "fixed"  # "fixed", "percentage", "kelly"
     margin_buffer: float = 0.2  # 20% buffer
-    max_position_size: int = 100  # Maximum lots per position
+    max_position_size: int = 105  # Maximum lots per position (3 lots with current lot size 35)
     daily_trade_limit: int = 10
     emergency_stop_file: str = "emergency_stop.txt"
     

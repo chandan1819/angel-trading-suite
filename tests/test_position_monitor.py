@@ -80,7 +80,7 @@ class TestPositionMonitor:
             strike=50000.0,
             option_type=OptionType.CE,
             action=OrderAction.SELL,
-            quantity=25,  # Full lot
+            quantity=35,  # Full lot
             entry_price=150.0,
             current_price=70.0  # Significant profit
         )
@@ -107,7 +107,7 @@ class TestPositionMonitor:
             strike=50000.0,
             option_type=OptionType.CE,
             action=OrderAction.SELL,
-            quantity=25,  # Full lot
+            quantity=35,  # Full lot
             entry_price=150.0,
             current_price=190.0  # Significant loss
         )

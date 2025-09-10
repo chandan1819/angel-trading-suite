@@ -14,11 +14,18 @@ from pathlib import Path
 from typing import Dict, Any, Optional, Union
 from dataclasses import asdict
 
-from ..models.config_models import (
-    TradingConfig, APIConfig, RiskConfig, StrategyConfig,
-    LoggingConfig, NotificationConfig, BacktestConfig,
-    TradingMode, LogLevel, NotificationType
-)
+try:
+    from ..models.config_models import (
+        TradingConfig, APIConfig, RiskConfig, StrategyConfig,
+        LoggingConfig, NotificationConfig, BacktestConfig,
+        TradingMode, LogLevel, NotificationType
+    )
+except ImportError:
+    from models.config_models import (
+        TradingConfig, APIConfig, RiskConfig, StrategyConfig,
+        LoggingConfig, NotificationConfig, BacktestConfig,
+        TradingMode, LogLevel, NotificationType
+    )
 
 
 class ConfigurationError(Exception):

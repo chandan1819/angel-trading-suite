@@ -220,9 +220,9 @@ class TestRiskManager:
         # Set trade P&L to hit profit target (need 2000 profit for short position)
         # For short position: profit = (entry_price - current_price) * quantity
         # Need: (150 - current_price) * 1 >= 2000, so current_price <= -1850
-        # But price can't be negative, so let's increase quantity to 25 (full lot)
-        sample_trade.legs[0].quantity = 25
-        sample_trade.legs[0].current_price = 70.0  # Profit: (150-70)*25 = 2000
+        # But price can't be negative, so let's increase quantity to 35 (full lot)
+        sample_trade.legs[0].quantity = 35
+        sample_trade.legs[0].current_price = 70.0  # Profit: (150-70)*35 = 2800
         
         alerts = risk_manager.monitor_positions([sample_trade])
         

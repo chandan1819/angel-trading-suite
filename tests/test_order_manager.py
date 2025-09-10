@@ -143,7 +143,7 @@ class TestOrderValidator(unittest.TestCase):
                 'start': time(9, 15),
                 'end': time(15, 30)
             },
-            'lot_size': 25,
+            'lot_size': 35,
             'max_order_value': 1000000,
             'min_price': 0.05,
             'max_price': 10000,
@@ -266,7 +266,7 @@ class TestOrderManager(unittest.TestCase):
         self.mock_api_client = Mock(spec=AngelAPIClient)
         self.config = {
             'validation': {
-                'lot_size': 25,
+                'lot_size': 35,
                 'max_order_value': 1000000,
                 'min_volume': 0,  # Disable volume check for tests
                 'min_open_interest': 0  # Disable OI check for tests

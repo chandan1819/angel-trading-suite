@@ -28,7 +28,7 @@ class TestDataManager:
         config_manager.get_section.return_value = {
             'atm_tie_breaker': 'lower',
             'max_strike_distance': 0.05,
-            'default_lot_size': 25
+            'default_lot_size': 35
         }
         return config_manager
     
@@ -517,7 +517,7 @@ class TestContractMetadata:
             
             assert result is not None
             assert isinstance(result, ContractMetadata)
-            assert result.lot_size == 25  # BANKNIFTY default
+            assert result.lot_size == 35  # BANKNIFTY current
             assert result.strike_spacing == 100.0  # From sample data
             assert result.underlying_symbol == "BANKNIFTY"
             assert result.expiry_date == "2025-01-01"
@@ -543,12 +543,12 @@ class TestContractMetadata:
         """Test lot size extraction for different underlyings"""
         # Test BANKNIFTY
         lot_size = data_manager._extract_lot_size(sample_options_chain)
-        assert lot_size == 25
+        assert lot_size == 35
         
         # Test unknown underlying (should use default)
         sample_options_chain.underlying_symbol = "UNKNOWN"
         lot_size = data_manager._extract_lot_size(sample_options_chain)
-        assert lot_size == 25  # Default from config
+        assert lot_size == 35  # Default from config
     
     def test_metadata_with_missing_expiry(self, data_manager):
         """Test metadata retrieval when expiry detection fails"""
@@ -652,7 +652,7 @@ class TestOptionsChainSummary:
         )
         
         metadata = ContractMetadata(
-            lot_size=25,
+            lot_size=35,
             strike_spacing=100.0,
             tick_size=0.05,
             underlying_symbol="BANKNIFTY",
@@ -673,7 +673,7 @@ class TestOptionsChainSummary:
             assert summary['underlying_price'] == 50000.0
             assert summary['total_strikes'] == 21  # From sample data
             assert summary['atm_info']['atm_strike'] == 50000.0
-            assert summary['contract_metadata']['lot_size'] == 25
+            assert summary['contract_metadata']['lot_size'] == 35
             assert 'validation' in summary
             assert 'is_valid' in summary['validation']
     

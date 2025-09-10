@@ -37,7 +37,7 @@ class OrderValidator:
             'pre_market_start': time(9, 0),
             'post_market_end': time(16, 0)
         })
-        self.lot_size = config.get('lot_size', 25)  # BANKNIFTY default
+        self.lot_size = config.get('lot_size', 35)  # BANKNIFTY current lot size
         self.max_order_value = config.get('max_order_value', 1000000)  # 10L max
         self.min_price = config.get('min_price', 0.05)
         self.max_price = config.get('max_price', 10000)

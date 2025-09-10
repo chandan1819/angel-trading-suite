@@ -14,8 +14,14 @@ from typing import Dict, Any, Optional, List
 from pathlib import Path
 from dataclasses import asdict
 
-from ..models.trading_models import Trade, TradeLeg, TradingSignal
-from ..models.config_models import LoggingConfig
+try:
+    from ..models.trading_models import Trade, TradeLeg, TradingSignal
+except ImportError:
+    from models.trading_models import Trade, TradeLeg, TradingSignal
+try:
+    from ..models.config_models import LoggingConfig
+except ImportError:
+    from models.config_models import LoggingConfig
 
 
 class LoggingManager:

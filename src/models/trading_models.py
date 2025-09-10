@@ -57,7 +57,7 @@ class Option:
     vega: float = 0.0
     gamma: float = 0.0
     iv: float = 0.0  # Implied Volatility
-    lot_size: int = 25  # Default BANKNIFTY lot size
+    lot_size: int = 35  # Current BANKNIFTY lot size (July 2025 onwards)
     
     def validate(self) -> bool:
         """Validate option data"""

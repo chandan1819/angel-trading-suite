@@ -175,7 +175,7 @@ class MockAngelAPI:
                     name="BANKNIFTY",
                     expiry=expiry,
                     strike=str(strike),
-                    lotsize="25",
+                    lotsize="35",
                     instrumenttype="OPTIDX",
                     exch_seg="NFO",
                     tick_size="0.05"
@@ -189,7 +189,7 @@ class MockAngelAPI:
                     name="BANKNIFTY",
                     expiry=expiry,
                     strike=str(strike),
-                    lotsize="25",
+                    lotsize="35",
                     instrumenttype="OPTIDX",
                     exch_seg="NFO",
                     tick_size="0.05"

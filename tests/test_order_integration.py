@@ -29,7 +29,7 @@ class TestOrderManagementIntegration(unittest.TestCase):
         
         self.config = {
             'validation': {
-                'lot_size': 25,
+                'lot_size': 35,
                 'max_order_value': 1000000,
                 'min_volume': 0,
                 'min_open_interest': 0

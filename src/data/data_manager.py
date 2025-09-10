@@ -77,7 +77,7 @@ class DataManager:
             'strike_range_multiplier': 0.1,  # 10% range around spot for ATM calculation
             'cache_ttl_seconds': 300,  # 5 minutes cache TTL
             'max_strike_distance': 0.05,  # 5% max distance for ATM consideration
-            'default_lot_size': 25,  # Default BANKNIFTY lot size
+            'default_lot_size': 35,  # Current BANKNIFTY lot size (July 2025 onwards)
             'default_strike_spacing': 100.0,  # Default strike spacing
             'enable_caching': True,  # Enable intelligent caching
             'cache_atm_results': True,  # Cache ATM calculation results
@@ -784,10 +784,10 @@ class DataManager:
             Lot size (default if not found)
         """
         try:
-            # For BANKNIFTY, lot size is typically 25
+            # For BANKNIFTY, lot size is currently 35 (July 2025 onwards)
             # This could be enhanced to query from API if available
             if options_chain.underlying_symbol == "BANKNIFTY":
-                return 25
+                return 35
             
             # Default fallback
             return self.config['default_lot_size']

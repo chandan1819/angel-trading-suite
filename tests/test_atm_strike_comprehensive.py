@@ -25,7 +25,7 @@ class TestATMStrikeComprehensive:
         mock_config_manager.get_section.return_value = {
             'atm_tie_breaker': 'lower',
             'max_strike_distance': 0.05,
-            'default_lot_size': 25
+            'default_lot_size': 35
         }
         return DataManager(mock_api_client, mock_config_manager)
     

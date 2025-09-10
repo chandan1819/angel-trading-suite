@@ -14,6 +14,7 @@ from dataclasses import dataclass
 from ..interfaces.base_interfaces import IRiskManager, BaseComponent
 from ..models.trading_models import TradingSignal, Trade, TradeLeg, OptionType, OrderAction
 from ..models.config_models import TradingConfig, RiskConfig
+from ..constants import BANKNIFTY_LOT_SIZE, validate_quantity, round_to_lot_size
 from .risk_models import (
     RiskAlert, RiskAlertType, RiskLevel, ValidationResult, 
     PositionSizeResult, MarginRequirement, DailyRiskMetrics, PositionRisk
@@ -229,6 +230,9 @@ class RiskManager(BaseComponent, IRiskManager):
             # Apply confidence factor
             recommended_size = int(recommended_size * confidence)
             recommended_size = max(1, recommended_size)  # Minimum 1 lot
+            
+            # Ensure quantity is multiple of lot size
+            recommended_quantity = recommended_size * BANKNIFTY_LOT_SIZE
             
             # Cap at maximum allowed size
             recommended_size = min(recommended_size, max_size)

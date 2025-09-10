@@ -33,7 +33,7 @@ risk:
   stop_loss: 1000.0
   position_size_method: fixed
   margin_buffer: 0.2
-  max_position_size: 100
+  max_position_size: 105  # Multiple of 35 (3 lots)
   daily_trade_limit: 10
   emergency_stop_file: emergency_stop.txt
 
