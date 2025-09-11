@@ -1,0 +1,55 @@
+{
+  "backtest_info": {
+    "period": "June 2025 - September 2025",
+    "current_date": "2025-09-10",
+    "strategies": [
+      "conservative_straddle",
+      "aggressive_straddle",
+      "market_neutral"
+    ],
+    "lot_size": 35,
+    "initial_capital": 1500000,
+    "market_conditions": "Post-election rally, Global uncertainty, Recovery attempt"
+  },
+  "performance": {
+    "final_capital": 1508773.0599999998,
+    "total_pnl": 8773.059999999823,
+    "total_return_pct": 0.5848706666666549,
+    "monthly_return_pct": 0.19495688888888496,
+    "annualized_return_pct": 2.3394826666666195,
+    "months_elapsed": 3
+  },
+  "trade_stats": {
+    "total_trades": 4,
+    "winning_trades": 3,
+    "losing_trades": 1,
+    "win_rate_pct": 75.0,
+    "avg_win": 3785.3633333333332,
+    "avg_loss": -2583.03
+  },
+  "strategy_breakdown": {
+    "aggressive_straddle": {
+      "trades": 4,
+      "pnl": 8773.06,
+      "win_rate": 75.0,
+      "avg_pnl": 2193.265
+    }
+  },
+  "monthly_breakdown": {
+    "June 2025": {
+      "trades": 2,
+      "pnl": 7841.32,
+      "win_rate": 100.0
+    },
+    "July 2025": {
+      "trades": 1,
+      "pnl": 3514.77,
+      "win_rate": 100.0
+    },
+    "August 2025": {
+      "trades": 1,
+      "pnl": -2583.03,
+      "win_rate": 0.0
+    }
+  }
+}

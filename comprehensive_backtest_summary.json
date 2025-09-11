@@ -1,0 +1,64 @@
+{
+  "backtest_info": {
+    "period": "June 2024 - August 2024",
+    "strategies": [
+      "conservative_straddle",
+      "aggressive_straddle",
+      "iron_condor"
+    ],
+    "lot_size": 35,
+    "initial_capital": 1000000
+  },
+  "performance": {
+    "final_capital": 1036500.0,
+    "total_pnl": 36500.0,
+    "total_return_pct": 3.65,
+    "monthly_return_pct": 1.2166666666666666,
+    "annualized_return_pct": 14.6
+  },
+  "trade_stats": {
+    "total_trades": 19,
+    "winning_trades": 18,
+    "losing_trades": 1,
+    "win_rate_pct": 94.73684210526315,
+    "avg_win": 2111.1111111111113,
+    "avg_loss": -1500.0,
+    "profit_factor": 25.333333333333332
+  },
+  "risk_metrics": {
+    "max_drawdown_pct": -0.14619883040935672,
+    "volatility_pct": 0.08438925716605622,
+    "sharpe_ratio": 24.97152544423346
+  },
+  "strategy_breakdown": {
+    "conservative_straddle": {
+      "trades": 16,
+      "pnl": 32000,
+      "win_rate": 100.0,
+      "avg_pnl": 2000.0
+    },
+    "aggressive_straddle": {
+      "trades": 3,
+      "pnl": 4500,
+      "win_rate": 66.66666666666666,
+      "avg_pnl": 1500.0
+    }
+  },
+  "monthly_breakdown": {
+    "June": {
+      "trades": 8,
+      "pnl": 16000.0,
+      "win_rate": 100.0
+    },
+    "July": {
+      "trades": 6,
+      "pnl": 10500.0,
+      "win_rate": 83.33333333333334
+    },
+    "August": {
+      "trades": 5,
+      "pnl": 10000.0,
+      "win_rate": 100.0
+    }
+  }
+}

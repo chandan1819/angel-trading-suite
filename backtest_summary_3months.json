@@ -1,0 +1,24 @@
+{
+  "period": "June 2024 - August 2024",
+  "strategy": "Conservative Short Straddle",
+  "lot_size": 35,
+  "initial_capital": 500000,
+  "final_capital": 500000.0,
+  "total_pnl": 0.0,
+  "total_return_pct": 0.0,
+  "total_trades": 0,
+  "winning_trades": 0,
+  "losing_trades": 0,
+  "win_rate_pct": 0.0,
+  "avg_win": 0.0,
+  "avg_loss": 0.0,
+  "max_drawdown_pct": 0.0,
+  "monthly_breakdown": {
+    "june_trades": 0,
+    "june_pnl": 0.0,
+    "july_trades": 0,
+    "july_pnl": 0.0,
+    "august_trades": 0,
+    "august_pnl": 0.0
+  }
+}
